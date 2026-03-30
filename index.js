@@ -33,7 +33,7 @@ const io = socketIO(server, {
     credentials: true,
   },
 });
-const port = 8001;
+const port = 3000;
 app.use(cors());
 
 connectMongoDb(process.env.MONGO_URI);
@@ -83,5 +83,5 @@ io.on("connection", (socket) => {
   });
 });
 server.listen(port, () => {
-  console.log(`Hello world app listening on port ${port}!`);
+  console.log(`Hello world app listening on port ${port || 3000}!`);
 });
