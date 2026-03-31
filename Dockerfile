@@ -1,6 +1,9 @@
-FROM node:18
+FROM node:18-alpine
 
 WORKDIR /app
+
+# Install dependencies required for bcrypt
+RUN apk add --no-cache python3 make g++
 
 COPY package*.json ./
 
